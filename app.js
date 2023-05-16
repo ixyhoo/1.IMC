@@ -8,3 +8,21 @@ const BMIData = [
 ];
 
 // IMC = poids en kg / taille² en m
+const form = document.querySelector("form")
+
+form.addEventListener("submit", handleForm) 
+
+function handleForm(e) {
+  e.preventDefault()
+
+  calculateBMI()
+}
+
+function calculateBMI() {
+  const weight = document.querySelector("#weight").value
+  const height = document.querySelector("#height").value
+
+  const bmi = weight / (height * height)
+
+  displayResult(bmi)
+}
