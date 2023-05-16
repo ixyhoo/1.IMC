@@ -65,4 +65,61 @@ h1 span {
   margin-left: 20px;
 }
 
+form button {
+  font-size: 20px;
+  min-width: 200px;
+  margin: 40px auto;
+  display: block;
+  border: none;
+  font-weight: 700;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  background: #fabe33;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+form button:hover {
+  background: #f2b527;
+}
+
+.info {
+  text-align: center;
+}
+
+.bmi-value {
+  font-size: 45px;
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+
+.result {
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+}
+
+@media (max-width: 800px) {
+  .container{
+    max-width: 600px;
+  }
+  .inputs-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .input-group:nth-child(2){
+    margin-top: 30px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 500px) {
+ .input-groupe {
+  width: 100%;
+ }
+ .input-groupe input {
+  min-width: 100%;
+  min-width: auto;
+ }
+
+}
 
