@@ -18,11 +18,18 @@ function handleForm(e) {
   calculateBMI()
 }
 
+const inputs = document.querySelectorAll("input")
+
 function calculateBMI() {
-  const weight = document.querySelector("#weight").value
-  const height = document.querySelector("#height").value
+  const weight = inputs[0].value
+  const height = inputs[1].value
 
-  const bmi = weight / (height * height)
+  if (!height || !weight || height <= 0 || weight <= 0) {
+    handlError()
+    return;
+  }
+}
 
-  displayResult(bmi)
+function handlError() {
+  
 }
