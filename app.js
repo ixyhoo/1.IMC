@@ -21,15 +21,35 @@ function handleForm(e) {
 const inputs = document.querySelectorAll("input")
 
 function calculateBMI() {
-  const weight = inputs[0].value
-  const height = inputs[1].value
+  const height = inputs[0].value;
+  const weight = inputs[1].value;
 
   if (!height || !weight || height <= 0 || weight <= 0) {
     handlError()
     return;
   }
+
+  const BMI = (weight / Math.pow(height / 100, 2)).toFixed(1)
+  console.log(BMI);
+  showResult(BMI)
 }
+const displayBMI = document.querySelector(".bmi-value")
+const result = document.querySelector(".result")
 
 function handlError() {
-  
+  displayBMI.textContent = "WOOPS!"
+  displayBMI.style.color = "red"
+  result.textContent = "Veuillez entrer des valeurs valides"
+}
+
+function showResult(BMI) {
+  const rank = BMIData.find((data) => {
+    if (BMI >= data.range[0] && BMI < data.range[1]) 
+      return data;
+      else if (typeof data.range[1] === "number" && BMI >= data.range)return data;
+    
+  })
+  displayBMI.textContent = BMI
+  displayBMI.style.color = `${rank.color}`
+  result.textContent = `Resultat ${rank.name}`
 }
